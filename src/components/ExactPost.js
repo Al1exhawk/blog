@@ -15,6 +15,7 @@ class ExactPost extends Component {
       body: value
     };
     this.props.addComment(comment);
+    this.commentInput.value = "";
   }
   render() {
     const { title, body, comments } = this.props.post;
