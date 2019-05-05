@@ -11,7 +11,14 @@ export default function(state = initialState, action) {
       return { ...state, post: action.payload };
     }
     case "ADD_COMMENT": {
-      return { ...state };
+      return {
+        ...state,
+        posts: state.posts.map(post => {
+          return post.id === action.payload.postId
+            ? { ...post, comments: [...post.comments, action.payload] }
+            : post;
+        })
+      };
     }
     default: {
       return state;
