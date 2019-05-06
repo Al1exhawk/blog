@@ -24,7 +24,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         posts: state.posts.map(post => {
-          return post.post.id === action.payload.id
+          return post.id === action.payload.id
             ? {
                 ...post,
                 title: action.payload.title,
@@ -32,6 +32,12 @@ export default function(state = initialState, action) {
               }
             : post;
         })
+      };
+    }
+    case "ADD_POST": {
+      return {
+        ...state,
+        posts: [...state.posts, action.payload]
       };
     }
     default: {

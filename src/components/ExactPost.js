@@ -38,8 +38,8 @@ class ExactPost extends Component {
     const { title } = this.title.value;
     const url = `https://simple-blog-api.crew.red/posts/${id}`;
     const EditedPost = {
-      body,
-      title
+      title,
+      body
     };
     this.props.editePost(EditedPost, url);
   }
