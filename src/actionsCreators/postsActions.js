@@ -29,8 +29,6 @@ export const getPost = id => dispatch => {
 export const addComment = comment => dispatch => {
   const req = new XMLHttpRequest();
   req.open("POST", `https://simple-blog-api.crew.red/comments`, true);
-  console.log(comment.body);
-
   req.setRequestHeader("Content-Type", "application/json");
   req.send(JSON.stringify(comment));
   req.onload = () => {
@@ -38,6 +36,20 @@ export const addComment = comment => dispatch => {
     dispatch({
       type: "ADD_COMMENT",
       payload: newcomment
+    });
+  };
+};
+
+export const editePost = (editedPost, url) => dispatch => {
+  const req = new XMLHttpRequest();
+  req.open("PUT", url, true);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(JSON.stringify(editedPost));
+  req.onload = () => {
+    const Editedcomment = JSON.parse(req.responseText);
+    dispatch({
+      type: "UPD_POST",
+      payload: Editedcomment
     });
   };
 };

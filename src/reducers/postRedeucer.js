@@ -20,6 +20,20 @@ export default function(state = initialState, action) {
         })
       };
     }
+    case "UPD_POST": {
+      return {
+        ...state,
+        posts: state.posts.map(post => {
+          return post.post.id === action.payload.id
+            ? {
+                ...post,
+                title: action.payload.title,
+                body: action.payload.body
+              }
+            : post;
+        })
+      };
+    }
     default: {
       return state;
     }

@@ -8,13 +8,20 @@
   justify-content: center;
   flex-direction: column;
   display: flex;
+  padding: 2%;
 }
 li {
   list-style-type: none;
 }
 .commenTinput {
-  display: inline-block;
+  display: block;
   width: 50%;
+  float: "left";
+  margin: 0px;
+  padding: 0px;
+}
+.FormsDiv {
+  margin: 1%;
 }
 #comments {
   text-align: left;
@@ -31,4 +38,7 @@ li {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.Submite {
+  background-color: #ffff00;
 }

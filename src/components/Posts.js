@@ -10,7 +10,7 @@ class Posts extends Component {
   }
   render() {
     const { posts } = this.props;
-    console.log(posts);
+
     return (
       <div className="container">
         {posts.map((post, index) => {
