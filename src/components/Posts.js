@@ -22,7 +22,7 @@ class Posts extends Component {
 
     return (
       <div className="container">
-        <div>
+        <div className="post">
           <div className="FormsDiv">
             <label>
               Title:
@@ -47,12 +47,12 @@ class Posts extends Component {
             </label>
             <div className="FormsDiv">
               <button className="Submite" onClick={this.Add.bind(this)}>
-                Edite
+                Add Post
               </button>
             </div>
           </div>
         </div>
-        <div>
+        <div className="container">
           {posts.map((post, index) => {
             return <Post key={index} post={post} />;
           })}
