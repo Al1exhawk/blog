@@ -5,9 +5,14 @@ import Post from "./Post";
 import PropTypes from "prop-types";
 
 class Posts extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   componentDidMount() {
     this.props.getPosts();
   }
+  componentDidUpdate() {}
   Add() {
     const body = this.abody.value;
     const title = this.atitle.value;
@@ -15,7 +20,7 @@ class Posts extends Component {
       title,
       body
     };
-    addPost(newPost);
+    this.props.addPost(newPost);
   }
   render() {
     const { posts } = this.props;
